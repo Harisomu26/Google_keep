@@ -1,0 +1,186 @@
+.sidenav_icons{
+    
+    position: relative;
+    top: -50px;
+    left: 6px;  
+    color: #9AA0A5;
+    cursor: pointer;       
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    vertical-align: middle;
+
+}
+.hig{
+    background-color: #41331c;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 50px;
+    vertical-align: middle;
+}
+.hig:hover {
+    background-color: #41331c;
+    color: white;
+  }
+
+
+
+
+
+/* .sidenav {
+    height: 142%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 85px;
+    padding-top: -11px;
+    left: 63px;
+    background-color: #202225;
+    overflow-x: hidden;
+    transition: 0.5s;
+    
+  } */
+  
+  /* .sidenav a {
+    padding: 22px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 400;    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+    font-family: 'Product Sans',Arial,sans-serif;
+  } */
+  
+  /* .sidenav a:hover {
+    color: #f1f1f1;
+  } */
+  
+  /* .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  } */
+
+
+  /* #mySidenav a {
+    position: absolute;
+    left: -80px;
+    top: 75px;
+    transition: 0.3s;
+    padding: 15px;
+    width: 0px;
+    height: 93%;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    background-color: violet;
+  }
+  
+  #mySidenav a:hover  {
+    left: 0;
+    width: 300px;
+    box-shadow: 1px 4px 9px #88888862;   
+
+  } */
+
+  /* .sidenav_icons:hover{
+    left: 0;
+    width: 300px;
+  } */
+  #about {
+    top: 20px;
+    background-color: #202225 ;
+    /* #202225 */
+  }
+
+
+
+  /* ********************************************************** */  
+
+
+  .sidebar {
+    height: 100%;
+    width: 85px;
+    position: fixed;
+    z-index: 1;
+    top: 75px;
+    left: 0;
+    /* background-color: ; */
+    transition: 0.5s;
+    overflow-x: hidden;
+    padding-top: 21px;
+    white-space: nowrap;
+  }
+  
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    
+  }
+  
+  .sidebar a:hover {
+   
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    background-color:  #41331c;
+    color: white;
+    /* margin-left: -20px; */
+  }
+  
+  main .sidebar {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  
+  .icon-text {
+    vertical-align: middle;
+    font-size: 1rem;
+    font-weight: 400;  
+  }
+  
+  .material-icons {
+    margin-left: -3px;
+
+    padding-bottom: 1px;
+    margin-right: 35px;
+  }
+  
+  #main {
+    padding: 16px;
+    margin-left: 85px;
+    transition: margin-left 0.5s;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidebar {
+      padding-top: 15px;
+    }
+    .sidebar a {
+      font-size: 18px;
+    }
+  }
+  

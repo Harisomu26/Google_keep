@@ -1,0 +1,146 @@
+<div id="top_header">
+  <mat-icon (click)="toggleSidebar()" aria-hidden="false" aria-label="Example home icon" class="reorder">reorder
+  </mat-icon>
+  <img src="../assets/imges/keep.png" width="45px" height="45px" class="image" alt="">
+  <span class="text"> Keep</span>
+  <mat-icon class="reload_icon">restart_alt</mat-icon>
+  <mat-icon class="list_icon">view_stream</mat-icon>
+
+  <mat-icon class="setting_icon">settings</mat-icon>
+
+  <mat-icon class="app_icon">archive</mat-icon>
+  <mat-icon class="acc_icon">account_circle</mat-icon>
+
+
+
+
+
+  <hr size="1" color="#5F6367">
+
+
+
+
+  <mat-icon class="search_icon">search</mat-icon>
+
+  <div class="form-group has-search">
+
+    <input type="email" class="form-control" id="search-text" placeholder="search" aria-describedby="search-text"
+      [(ngModel)]="searchText" autofocus>
+
+
+
+  </div>
+  <mat-icon class="close_icon">close</mat-icon>
+
+
+
+
+</div>
+<div id="marker_header">
+
+  <mat-icon class="reload_icon" style="color: #8AB4F7; bottom: -17px">push_pin</mat-icon>
+  <mat-icon class="list_icon" style="color: #8AB4F7;bottom: -17px">add_alert</mat-icon>
+
+  <mat-icon class="setting_icon" style="color: #8AB4F7;bottom: -17px">palette</mat-icon>
+
+  <mat-icon class="app_icon_m" style="color: #8AB4F7;bottom: -17px">apps</mat-icon>
+  <mat-icon class="acc_icon_m" style="color: #8AB4F7;bottom: -17px">more_vert</mat-icon>
+  <hr size="1" style="margin-top: 2em;" color="#5F6367">
+
+  <mat-icon class="marked_close_icon " (click)="marked_close()">close</mat-icon>
+  <span class="marked_selected_icon">{{count}} Selected</span>
+
+</div>
+
+<div id="mySidebar1" class="sidebar">
+  <a href="#"><span><i class="material-icons ">lightbulb</i><span class="icon-text">Notes</span></span></a><br>
+  <a href="#"><span><i class="material-icons">notifications</i><span class="icon-text">Reminders</span></span></a><br>
+  <a href="#"> <span><i class="material-icons">label</i><span class="icon-text">Inspiration</span></span> </a><br>
+  <a href="#"><span> <i class="material-icons">label</i><span class="icon-text">Personal</span> </span></a><br>
+  <a href="#"><span><i class="material-icons">label</i><span class="icon-text">Work</span> </span> </a><br>
+  <a href="#"><span><i class="material-icons">edit</i><span class="icon-text">Edit lables </span> </span></a><br>
+  <a href="#"><span><i class="material-icons">archive</i><span class="icon-text">Archive</span></span></a><br>
+  <a href="#"><span> <i class="material-icons">delete</i><span class="icon-text">Trash</span> </span></a><br>
+
+</div>
+
+<div id="main">
+
+</div>
+
+
+
+
+
+<app-sidenav></app-sidenav>
+
+<div id="notes_change">
+  <div class="note_style" id="icon">
+
+    <mat-icon class="task_icon" id="task_icon">task</mat-icon>
+    <mat-icon class="create_icon" id="create_icon">create</mat-icon>
+    <mat-icon class="img_icon" id="img_icon" (click)="fileInput.click()">image</mat-icon>
+    <mat-icon class="pin_icon" id="pin_icon">push_pin</mat-icon>
+    <button class="close" id="clos"
+      (click)="close(tittle.value,note.value,note.value='',tittle.value='')">close</button>
+
+    <textarea class="tittle" rows="1" #note cols="50" id="textarea" placeholder="Take a note..."
+      (click)="notes()"></textarea>
+    <input type="text" id="header" #tittle class="tittle_heading" placeholder="Title">
+    
+    <input type='file' style="display: none;" id="imageUpload" accept=".png, .jpg, .jpeg" #fileInput multiple
+    (change)="onSelectFile($event)" />
+
+    <mat-icon class="ale" id="alert">add_alert</mat-icon>
+    <mat-icon class="user" id="use">person_add_alt</mat-icon>
+    <mat-icon class="color_pallet" id="color_pallet">palette</mat-icon>
+    <mat-icon class="img" id="img">image</mat-icon>
+    <mat-icon class="arch" id="arch">archive</mat-icon>
+    <mat-icon class="dot" id="dot">more_vert</mat-icon>
+    <mat-icon class="undo" id="undo">undo</mat-icon>
+    <mat-icon class="redo" id="redo">redo</mat-icon>
+
+
+
+
+  </div>
+
+</div>
+
+<div class="grid-container">
+
+
+  <div id="pin" class="pin" *ngFor="let i of data | filter: searchText">
+
+
+    <a id="pin_marker">
+    </a>
+    <div id="notes_style" class="notes_style" (click)=pin()>
+
+      <span style="font-size: larger;">{{i.head}}</span><br>
+
+      <div *ngIf="i.note[5]===':' ; else normalnotes">
+        <a href={{i.note}}><span style="position: relative;top: 10px; color: white;">{{i.note}}</span></a>
+      </div>
+
+      <ng-template #normalnotes>
+        <span >{{i.note}}</span><br>
+        <mat-icon class="alert_n" id="alert_n">add_alert</mat-icon>
+        <mat-icon class="use_n" id="use_n">person_add_alt</mat-icon>
+        <mat-icon class="color_pallet_n" id="color_pallet">palette</mat-icon>
+        <mat-icon class="img_n" id="img_n">image</mat-icon>
+        <mat-icon class="arch_n" id="arch_n">archive</mat-icon>
+        <mat-icon class="dot_n"  id="dot_n">more_vert</mat-icon>
+      </ng-template>
+
+
+    </div>
+
+
+
+  </div>
+
+</div>
+<div class="img_uploade"> 
+  <img  *ngFor='let url of urls' style="padding-left: 170px;" [src]="url" height="200"> <br/>
+</div>
