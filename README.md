@@ -1,2 +1,5 @@
 # To run the project 
-ng serve -o
+1. npm install
+2. npm i ng2-search-filter
+3. ng serve -o
+
